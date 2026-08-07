@@ -1,0 +1,8 @@
+__pycache__/
+*.py
+regions.json
+style_base.css
+_*.txt
+_*.json
+SD_*.md
+이미지_교체방법.md
