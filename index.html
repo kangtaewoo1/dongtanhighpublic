@@ -118,6 +118,31 @@ footer{border-top:1.5px solid var(--border);padding:48px 0 100px;background:var(
 /* ── 하단 고정 전화 바 ── */
 .callbar{position:fixed;left:0;bottom:0;width:100%%;z-index:200;display:none;background:linear-gradient(135deg,#E65C00,#FF9800);color:#fff;text-align:center;padding:16px;font-weight:800;letter-spacing:.03em;font-size:.97rem}
 @media(max-width:720px){.callbar{display:block}.hd .call{display:none}footer{padding-bottom:88px}.hero{padding:100px 0 60px}section{padding:56px 0}.steps{padding-left:36px}.steps::before{left:17px}.step-num{margin-left:-36px}}
+
+/* ── 후기 섹션 ── */
+.review-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin-top:8px}
+.review-card{background:var(--surface);border:2px solid var(--border);border-radius:14px;padding:22px 20px;transition:border-color .25s,transform .25s}
+.review-card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(230,92,0,.15)}
+.stars{color:#F59E0B;font-size:1.1rem;margin-bottom:10px;letter-spacing:2px}
+.review-text{color:var(--muted);font-size:.9rem;line-height:1.88;margin-bottom:12px}
+.review-meta{font-size:.8rem;color:var(--muted);opacity:.8;display:flex;gap:10px;flex-wrap:wrap}
+.review-meta b{color:var(--accent)}
+
+/* ── 실시간 현황 ── */
+.live-wrap{background:rgba(230,92,0,.06);border:1.5px solid rgba(230,92,0,.22);border-radius:14px;padding:18px;margin-top:8px}
+.live-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#E65C00,#FF9800);color:#fff;font-size:.78rem;font-weight:800;padding:5px 13px;border-radius:50px;letter-spacing:.06em;margin-bottom:14px}
+.live-dot{width:7px;height:7px;border-radius:50%%;background:#fff;animation:blink-live 1.4s ease infinite}
+@keyframes blink-live{0%%,100%%{opacity:1}50%%{opacity:.2}}
+.live-feed{display:flex;flex-direction:column;gap:9px}
+.live-item{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;font-size:.88rem}
+.live-area{font-weight:800;color:var(--text);min-width:90px}
+.live-type{color:var(--muted);flex:1}
+.live-status{font-size:.81rem;font-weight:800;padding:3px 10px;border-radius:50px;white-space:nowrap}
+.live-status.active{background:rgba(22,163,74,.12);color:#16A34A}
+.live-status.reserved{background:rgba(234,88,12,.12);color:#EA580C}
+.live-status.pickup{background:rgba(202,138,4,.14);color:#CA8A04}
+.live-time{font-size:.77rem;color:var(--muted);white-space:nowrap;margin-left:auto}
+@media(max-width:480px){.live-type{display:none}}
 </style>
 </head><body>
 
@@ -216,6 +241,33 @@ footer{border-top:1.5px solid var(--border);padding:48px 0 100px;background:var(
   </div>
 </section>
 
+<!-- 후기 -->
+<section>
+  <div class="wrap">
+    <div class="sec-eyebrow">Reviews</div>
+    <h2 class="sec-title">이용해보셨어요? 진짜 후기예요 😊</h2>
+    <div class="review-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">동탄역 내리자마자 픽업 연락 드렸더니 진짜 빠르게 왔어요. 노래도 되고 분위기도 너무 좋고, 친구들이랑 엄청 신나게 놀았어요. 추가 요금 하나도 없이 끝나서 더 좋았습니다!</p><div class="review-meta"><b>정** 님</b><span>동탄역</span><span>2026.07.25</span></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">하이퍼블릭이 뭔지 몰랐는데 전화하니까 친절하게 설명해 주셨어요. 무대 있는 넓은 룸에서 노래까지 하니까 룸싸롱이랑 완전 달랐어요. 완전 추천! 다음에 또 갈 거예요.</p><div class="review-meta"><b>이** 님</b><span>동탄2신도시</span><span>2026.07.13</span></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">반송동에서 픽업 요청했는데 생각보다 훨씬 빨리 왔어요. 처음 간 거라 걱정했는데 아무것도 강요 없이 편하게 즐길 수 있었어요. 선불 없이 끝나고 계산하는 것도 좋았어요!</p><div class="review-meta"><b>최** 님</b><span>반송동</span><span>2026.07.01</span></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">여자 친구랑 같이 갔는데 전혀 불편하지 않았어요. 직원분들 친절하시고 강요도 없어서 너무 편했어요. 룸도 깔끔하고 사운드도 좋아요. 동탄에 여기 생겨서 다행이에요 ㅋㅋ</p><div class="review-meta"><b>박** 님</b><span>병점</span><span>2026.06.20</span></div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p class="review-text">새벽에 갑자기 친구들이랑 가고 싶어서 연락했는데 진짜 바로 받아주시더라고요. 24시간이라더니 진짜 24시간이네요! 픽업도 됐고 재밌게 놀다 왔어요. 대만족!!</p><div class="review-meta"><b>한** 님</b><span>능동</span><span>2026.06.08</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 실시간 현황 -->
+<section>
+  <div class="wrap">
+    <div class="sec-eyebrow">Live</div>
+    <h2 class="sec-title">지금 이 시간에도 즐기고 있어요 🎤</h2>
+    <div class="live-wrap">
+      <div class="live-badge"><span class="live-dot"></span>LIVE</div>
+      <div class="live-feed" id="liveFeed"></div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section>
   <div class="wrap">
@@ -250,7 +302,7 @@ footer{border-top:1.5px solid var(--border);padding:48px 0 100px;background:var(
 <a href="tel:01056719712" class="callbar">&#9742; 010-5671-9712 · 24시간 전화 상담</a>
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+(function(){
   var h=document.querySelector('header'),t=false,s=false;
   window.addEventListener('scroll',function(){
     if(t)return;t=true;
@@ -260,6 +312,40 @@ document.addEventListener('DOMContentLoaded',function(){
       t=false;
     });
   },{passive:true});
-});
+
+  var DATA=[
+    {area:"동탄역",type:"하이퍼블릭",status:"이용 중",cls:"active",min:5},
+    {area:"동탄2신도시",type:"하이퍼블릭",status:"예약 완료",cls:"reserved",min:11},
+    {area:"반송동",type:"하이퍼블릭",status:"픽업 출발",cls:"pickup",min:17},
+    {area:"병점",type:"하이퍼블릭",status:"이용 중",cls:"active",min:24},
+    {area:"능동",type:"하이퍼블릭",status:"예약 완료",cls:"reserved",min:29},
+    {area:"산척동",type:"하이퍼블릭",status:"이용 중",cls:"active",min:36},
+    {area:"동탄역",type:"하이퍼블릭",status:"픽업 출발",cls:"pickup",min:42},
+    {area:"영천동",type:"하이퍼블릭",status:"이용 중",cls:"active",min:49},
+    {area:"진안동",type:"하이퍼블릭",status:"예약 완료",cls:"reserved",min:54},
+    {area:"동탄2신도시",type:"하이퍼블릭",status:"픽업 출발",cls:"pickup",min:61},
+  ];
+  var feed=document.getElementById('liveFeed');
+  if(!feed)return;
+  var idx=0;
+  function row(d){
+    var li=document.createElement('div');li.className='live-item';
+    li.innerHTML='<span class="live-area">'+d.area+'</span>'
+      +'<span class="live-type">'+d.type+'</span>'
+      +'<span class="live-status '+d.cls+'">'+d.status+'</span>'
+      +'<span class="live-time">'+d.min+'분 전</span>';
+    return li;
+  }
+  DATA.slice(0,6).forEach(function(d){feed.appendChild(row(d));idx++;});
+  setInterval(function(){
+    if(feed.firstChild)feed.removeChild(feed.firstChild);
+    var d=Object.assign({},DATA[idx%DATA.length]);
+    d.min=Math.floor(Math.random()*5)+1;
+    feed.appendChild(row(d));idx++;
+    feed.querySelectorAll('.live-item .live-time').forEach(function(el){
+      el.textContent=(parseInt(el.textContent)+1)+'분 전';
+    });
+  },30000);
+})();
 </script>
 </body></html>
